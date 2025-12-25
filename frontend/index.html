@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Council : Open Source Discussion Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LLM Council</h1>
+            <p class="subtitle">Open Source AI Discussion Platform</p>
+        </header>
+
+        <div class="council-info">
+            <h2>Council Members</h2>
+            <div class="members-grid">
+                <div class="member-card chairman">
+                    <strong>Chairman:</strong> Gemini Flash
+                </div>
+                <div class="member-card">
+                    <strong>Member 1:</strong> Mistral Small
+                </div>
+                <div class="member-card">
+                    <strong>Member 2:</strong> Llama 3.3 (70B)
+                </div>
+                <div class="member-card">
+                    <strong>Member 3:</strong> Llama 3.1 (8B)
+                </div>
+                <div class="member-card">
+                    <strong>Member 4:</strong> Llama 3.2 (3B) - Hugging Face
+                </div>
+            </div>
+        </div>
+
+        <div class="discussion-panel">
+            <h2>Start a Discussion</h2>
+            <form id="discussion-form">
+                <div class="form-group">
+                    <label for="topic">Discussion Topic:</label>
+                    <textarea 
+                        id="topic" 
+                        name="topic" 
+                        rows="3" 
+                        placeholder="Enter a topic for the council to discuss..."
+                        required
+                    ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rounds">Number of Rounds:</label>
+                    <input 
+                        type="number" 
+                        id="rounds" 
+                        name="rounds" 
+                        min="1" 
+                        max="5" 
+                        value="2"
+                        required
+                    >
+                </div>
+                <button type="submit" id="submit-btn">Start Discussion</button>
+            </form>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Council is deliberating...</p>
+        </div>
+
+        <div id="results" class="results hidden">
+            <h2>Council Discussion</h2>
+            <div id="discussion-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
